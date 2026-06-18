@@ -9,7 +9,12 @@ import joblib
 import plotly.express as px
 import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
+import os
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model = joblib.load(os.path.join(BASE_DIR, "buysense_model.pkl"))
+encoders = joblib.load(os.path.join(BASE_DIR, "encoders.pkl"))
+target_encoder = joblib.load(os.path.join(BASE_DIR, "target_encoder.pkl"))
 
 
 
@@ -21,7 +26,7 @@ st.set_page_config(
     page_icon="🛍️")
 
 # ////////////////// load dataset //////////////////
-df = pd.read_csv("buysense_dataset.csv")
+df = pd.read_csv(os.path.join(BASE_DIR, "buysense_dataset.csv"))
 
 # ////////////////// sidebar //////////////////
 with st.sidebar:
