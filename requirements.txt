@@ -1,6 +1,6 @@
 streamlit
-pandas
 scikit-learn
+pandas
 joblib
 streamlit-option-menu
 plotly
