@@ -12,9 +12,6 @@ import streamlit.components.v1 as components
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-model = joblib.load(os.path.join(BASE_DIR, "buysense_model.pkl"))
-encoders = joblib.load(os.path.join(BASE_DIR, "encoders.pkl"))
-target_encoder = joblib.load(os.path.join(BASE_DIR, "target_encoder.pkl"))
 
 
 
@@ -96,9 +93,9 @@ elif selected == "Prediction":
     st.markdown("### Try a Prediction")
 
     # Load model
-    model = joblib.load("buysense_model.pkl")
-    encoders = joblib.load("encoders.pkl")
-    target_encoder = joblib.load("target_encoder.pkl")
+    model = joblib.load(os.path.join(BASE_DIR, "buysense_model.pkl"))
+    encoders = joblib.load(os.path.join(BASE_DIR, "encoders.pkl"))
+    target_encoder = joblib.load(os.path.join(BASE_DIR, "target_encoder.pkl"))
 
     col1, col2 = st.columns(2)
 
